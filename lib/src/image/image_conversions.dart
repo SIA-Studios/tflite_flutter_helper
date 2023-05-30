@@ -53,7 +53,7 @@ class ImageConversions {
   static void convertImageToTensorBuffer(Image image, TensorBuffer buffer) {
     int w = image.width;
     int h = image.height;
-    List<int> intValues = image.data!.getBytes();
+    List<int> intValues = image.data!.getBytes(order: ChannelOrder.abgr);
     int flatSize = w * h * 3;
     List<int> shape = [h, w, 3];
     switch (buffer.getDataType()) {

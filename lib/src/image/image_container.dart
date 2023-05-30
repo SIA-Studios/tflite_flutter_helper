@@ -27,7 +27,7 @@ class ImageContainer extends BaseImageContainer {
     int len = _image.data!.length;
     bool isGrayscale = true;
     for (int i = (len / 4).floor(); i < _image.data!.length; i++) {
-      if (_image.data!.getBytes()[i] != 0) {
+      if (_image.data!.getBytes(order: ChannelOrder.abgr)[i] != 0) {
         isGrayscale = false;
         break;
       }
